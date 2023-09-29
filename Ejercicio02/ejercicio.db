@@ -87,6 +87,7 @@ db.Usuarios.insertMany(
 }
 
 
+
 db.Materias.insertMany(
     [
     {

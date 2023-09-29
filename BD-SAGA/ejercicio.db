@@ -1,0 +1,418 @@
+use saga
+
+
+
+
+
+Inserts - Insert
+
+{
+  "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f3"),
+  "producto": "Libro de Matemáticas",
+  "descripcion": "Libro de matemáticas para el curso de álgebra lineal.",
+  "fecha_prestamo": ISODate("2023-09-21T10:00:00Z"),
+  "fecha_entrega": ISODate("2023-10-05T15:30:00Z")
+}
+
+
+///// Inset 
+
+db.personas.insertMany(
+    [
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f0"),
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "cc": "1234567890",
+    "correo": "juan@gmail.com",
+    "ficha": "2502639",
+    "rol": "admin"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f1"),
+    "nombre": "María",
+    "apellido": "González",
+    "cc": "9876543210",
+    "correo": "maria@gmail.com",
+    "ficha": "2502640",
+    "rol": "usuario"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f2"),
+    "nombre": "Carlos",
+    "apellido": "Rodríguez",
+    "cc": "4567890123",
+    "correo": "carlos@gmail.com",
+    "ficha": "2502641",
+    "rol": "admin"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f3"),
+    "nombre": "Laura",
+    "apellido": "López",
+    "cc": "2345678901",
+    "correo": "laura@gmail.com",
+    "ficha": "2502642",
+    "rol": "usuario"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f4"),
+    "nombre": "Pedro",
+    "apellido": "Martínez",
+    "cc": "3456789012",
+    "correo": "pedro@gmail.com",
+    "ficha": "2502643",
+    "rol": "admin"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f5"),
+    "nombre": "Isabel",
+    "apellido": "Ramírez",
+    "cc": "6543210987",
+    "correo": "isabel@gmail.com",
+    "ficha": "2502644",
+    "rol": "usuario"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f6"),
+    "nombre": "Antonio",
+    "apellido": "Ruiz",
+    "cc": "5432109876",
+    "correo": "antonio@gmail.com",
+    "ficha": "2502645",
+    "rol": "admin"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f7"),
+    "nombre": "Lucía",
+    "apellido": "Fernández",
+    "cc": "4321098765",
+    "correo": "lucia@gmail.com",
+    "ficha": "2502646",
+    "rol": "usuario"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f8"),
+    "nombre": "Carlos",
+    "apellido": "López",
+    "cc": "3210987654",
+    "correo": "carlos2@gmail.com",
+    "ficha": "2502647",
+    "rol": "admin"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407f9"),
+    "nombre": "Marta",
+    "apellido": "Gómez",
+    "cc": "2109876543",
+    "correo": "marta@gmail.com",
+    "ficha": "2502648",
+    "rol": "usuario"
+  }
+]
+)
+
+db.instructores.insertMany(
+    [
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407fa"),
+    "nombre": "Hector David",
+    "apellido": "Toledo",
+    "cc": "1234567890",
+    "correo": "juan@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407fb"),
+    "nombre": "María",
+    "apellido": "González",
+    "cc": "9876543210",
+    "correo": "maria@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407fc"),
+    "nombre": "Carlos",
+    "apellido": "Rodríguez",
+    "cc": "4567890123",
+    "correo": "carlos@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407fd"),
+    "nombre": "Laura",
+    "apellido": "López",
+    "cc": "2345678901",
+    "correo": "laura@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407fe"),
+    "nombre": "Pedro",
+    "apellido": "Martínez",
+    "cc": "3456789012",
+    "correo": "pedro@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e5407ff"),
+    "nombre": "Isabel",
+    "apellido": "Ramírez",
+    "cc": "6543210987",
+    "correo": "isabel@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e540800"),
+    "nombre": "Antonio",
+    "apellido": "Ruiz",
+    "cc": "5432109876",
+    "correo": "antonio@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e540801"),
+    "nombre": "Lucía",
+    "apellido": "Fernández",
+    "cc": "4321098765",
+    "correo": "lucia@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e540802"),
+    "nombre": "Carlos",
+    "apellido": "López",
+    "cc": "3210987654",
+    "correo": "carlos2@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  },
+  {
+    "_id": ObjectId("5f9d9f87a0c3fd7d8e540803"),
+    "nombre": "Marta",
+    "apellido": "Gómez",
+    "cc": "2109876543",
+    "correo": "marta@gmail.com",
+    "fichas": [2502639, 2503912, 2503122],
+    "rol": "instructor"
+  }
+]
+)
+
+db.formaciones.insertMany(
+    [
+        {  "num_ficha": "2502639",
+        "jornada": "mañana"
+        },
+        {  "num_ficha": "2507361",
+        "jornada": "mañana"
+        },
+        {  "num_ficha": "2394110",
+        "jornada": "tarde"
+        },
+        {  "num_ficha": "2401233",
+        "jornada": "noche"
+        },
+        {  "num_ficha": "2334765",
+        "jornada": "mañana"
+        },
+        {  "num_ficha": "2102451",
+        "jornada": "tarde"
+        },
+        {  "num_ficha": "2409132",
+        "jornada": "mañana"
+        },
+        {  "num_ficha": "123123",
+        "jornada": "mañana"
+        },
+        {  "num_ficha": "4567",
+        "jornada": "tarde"
+        },
+        {
+        "num_ficha": "8901",
+        "jornada": "mañana"
+
+        }
+    ]
+)
+
+
+db.noticias.insertMany(
+    [
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url1"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url2"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url3"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url4"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url5"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url6"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url7"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url8"
+        },
+        {
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url9"
+        },
+        {
+
+        "titulo_noticia": "Hola",
+        "cuerpo_noticia": "No",
+        "img_noticia": "url10"
+        }
+    ]
+)
+
+db.prestamos.insertMany([
+  {
+    "producto": "Computador 1",
+    "descripcion": "Computador Asus",
+    "fecha_prestamo": new Date("2023-09-27T10:00:00Z"),
+    "fecha_entrega": new Date("2023-09-30T14:30:00Z")
+  },
+  {
+    "producto": "Computador 2",
+    "descripcion": "Computador HP",
+    "fecha_prestamo": new Date("2023-09-28T09:15:00Z"),
+    "fecha_entrega": new Date("2023-10-01T16:45:00Z")
+  },
+  {
+    "producto": "Computador 3",
+    "descripcion": "Computador Dell",
+    "fecha_prestamo": new Date("2023-09-29T11:30:00Z"),
+    "fecha_entrega": new Date("2023-10-02T12:00:00Z")
+  },
+  {
+    "producto": "Computador 4",
+    "descripcion": "Computador Lenovo",
+    "fecha_prestamo": new Date("2023-09-30T15:45:00Z"),
+    "fecha_entrega": new Date("2023-10-03T09:30:00Z")
+  },
+  {
+    "producto": "Computador 5",
+    "descripcion": "Computador Acer",
+    "fecha_prestamo": new Date("2023-10-01T14:00:00Z"),
+    "fecha_entrega": new Date("2023-10-04T11:15:00Z")
+  },
+  {
+    "producto": "Computador 6",
+    "descripcion": "Computador Sony",
+    "fecha_prestamo": new Date("2023-10-02T12:30:00Z"),
+    "fecha_entrega": new Date("2023-10-05T17:00:00Z")
+  },
+  {
+    "producto": "Computador 7",
+    "descripcion": "Computador MSI",
+    "fecha_prestamo": new Date("2023-10-03T10:30:00Z"),
+    "fecha_entrega": new Date("2023-10-06T15:45:00Z")
+  },
+  {
+    "producto": "Computador 8",
+    "descripcion": "Computador Toshiba",
+    "fecha_prestamo": new Date("2023-10-04T16:15:00Z"),
+    "fecha_entrega": new Date("2023-10-07T13:20:00Z")
+  },
+  {
+    "producto": "Computador 9",
+    "descripcion": "Computador Apple",
+    "fecha_prestamo": new Date("2023-10-05T09:00:00Z"),
+    "fecha_entrega": new Date("2023-10-08T18:00:00Z")
+  },
+  {
+    "producto": "Computador 10",
+    "descripcion": "Computador MSI",
+    "fecha_prestamo": new Date("2023-10-06T11:45:00Z"),
+    "fecha_entrega": new Date("2023-10-09T14:30:00Z")
+  }
+])
+
+db.asistencias.insertMany([
+  {
+    "nombre": "Juan",
+    "apellido": "Cera",
+    "fecha_asistencia": new Date("2023-09-27T08:30:00Z")
+  },
+  {
+    "nombre": "Ana",
+    "apellido": "Gómez",
+    "fecha_asistencia": new Date("2023-09-28T09:15:00Z")
+  },
+  {
+    "nombre": "Luis",
+    "apellido": "Martínez",
+    "fecha_asistencia": new Date("2023-09-29T10:00:00Z")
+  },
+  {
+    "nombre": "María",
+    "apellido": "Rodríguez",
+    "fecha_asistencia": new Date("2023-09-30T11:45:00Z")
+  },
+  {
+    "nombre": "Pedro",
+    "apellido": "González",
+    "fecha_asistencia": new Date("2023-10-01T13:30:00Z")
+  },
+  {
+    "nombre": "Laura",
+    "apellido": "Pérez",
+    "fecha_asistencia": new Date("2023-10-02T14:15:00Z")
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "López",
+    "fecha_asistencia": new Date("2023-10-03T15:00:00Z")
+  },
+  {
+    "nombre": "Marta",
+    "apellido": "Hernández",
+    "fecha_asistencia": new Date("2023-10-04T16:45:00Z")
+  },
+  {
+    "nombre": "Javier",
+    "apellido": "Fernández",
+    "fecha_asistencia": new Date("2023-10-05T17:30:00Z")
+  },
+  {
+    "nombre": "Elena",
+    "apellido": "Sánchez",
+    "fecha_asistencia": new Date("2023-10-06T18:15:00Z")
+  }
+])
