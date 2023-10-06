@@ -1,0 +1,1012 @@
+use hospital
+
+db.createCollection("autorizaciones_examenes")
+db.createCollection("pacientes_medicamentos")
+db.createCollection("citas_medicas")
+db.createCollection("expecialistas")
+db.createCollection("medicos")
+
+
+db.medicos.insertMany(
+    [
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993812",
+            "nombre": "Juan Sebastian",
+            "apellido": "Cerra Jutsu",
+            "tipo": "medico",
+            "areas": ["1A", "2B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993813",
+            "nombre": "Luis Daniel",
+            "apellido": "Calderon Ruiz",
+            "tipo": "medico",
+            "areas": ["3A", "3B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993814",
+            "nombre": "Maria",
+            "apellido": "Gonzalez",
+            "tipo": "auxiliar",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993815",
+            "nombre": "Carlos",
+            "apellido": "Martinez",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993816",
+            "nombre": "Ana",
+            "apellido": "Perez",
+            "tipo": "medico",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993817",
+            "nombre": "Javier",
+            "apellido": "Lopez",
+            "tipo": "auxiliar",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993818",
+            "nombre": "Laura",
+            "apellido": "Ramirez",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993819",
+            "nombre": "Diego",
+            "apellido": "Hernandez",
+            "tipo": "auxiliar",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993820",
+            "nombre": "Sara",
+            "apellido": "Torres",
+            "tipo": "enfermero",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993821",
+            "nombre": "Alejandro",
+            "apellido": "Diaz",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993822",
+            "nombre": "Elena",
+            "apellido": "Fernandez",
+            "tipo": "auxiliar",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993823",
+            "nombre": "Miguel",
+            "apellido": "Gomez",
+            "tipo": "enfermero",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993824",
+            "nombre": "Isabel",
+            "apellido": "Castro",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993825",
+            "nombre": "Raul",
+            "apellido": "Ortega",
+            "tipo": "enfermero",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993826",
+            "nombre": "Carmen",
+            "apellido": "Santos",
+            "tipo": "enfermero",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993827",
+            "nombre": "Fernando",
+            "apellido": "Molina",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993828",
+            "nombre": "Natalia",
+            "apellido": "Vargas",
+            "tipo": "enfermero",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993829",
+            "nombre": "Pablo",
+            "apellido": "Rios",
+            "tipo": "enfermero",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993830",
+            "nombre": "Eva",
+            "apellido": "Martinez",
+            "tipo": "medico",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993831",
+            "nombre": "Hector",
+            "apellido": "Perez",
+            "tipo": "auxiliar",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993832",
+            "nombre": "Adriana",
+            "apellido": "Gutierrez",
+            "tipo": "medico",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993833",
+            "nombre": "Roberto",
+            "apellido": "Lopez",
+            "tipo": "enfermero",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993834",
+            "nombre": "Elena",
+            "apellido": "Fernandez",
+            "tipo": "auxiliar",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993835",
+            "nombre": "Miguel",
+            "apellido": "Gomez",
+            "tipo": "enfermero",
+            "areas": ["2A", "2B", "2C"]
+        }
+    ]
+)
+
+db.especialistas.insertMany(
+    [
+        {
+            "_id": ObjectId(),
+            "cedula": "1003993812",
+            "nombre": "Juan Sebastian",
+            "apellido": "Cerra Jutsu",
+            "especializacion": "Cardio Vascular",
+            "areas": ["1A", "2B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100312311",
+            "nombre": "Juan Sebastian",
+            "apellido": "Cerra Jutsu",
+            "especializacion": "Anatomía Patológica",
+            "areas": ["3A", "3B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311231",
+            "nombre": "Samuel Fernando",
+            "apellido": "Silva Suarez",
+            "especializacion": "Cirugía General",
+            "areas": ["2A", "1B",  "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311232",
+            "nombre": "Ana Maria",
+            "apellido": "Lopez",
+            "especializacion": "Neurología",
+            "areas": ["2A", "2B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311233",
+            "nombre": "Carlos",
+            "apellido": "Gomez",
+            "especializacion": "Dermatología",
+            "areas": ["3A", "3B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311234",
+            "nombre": "Laura",
+            "apellido": "Rodriguez",
+            "especializacion": "Oftalmología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311235",
+            "nombre": "David",
+            "apellido": "Hernandez",
+            "especializacion": "Endocrinología",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311236",
+            "nombre": "Elena",
+            "apellido": "Fernandez",
+            "especializacion": "Gastroenterología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311237",
+            "nombre": "Gabriel",
+            "apellido": "Perez",
+            "especializacion": "Hematología",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311238",
+            "nombre": "Isabel",
+            "apellido": "Garcia",
+            "especializacion": "Nefrología",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311239",
+            "nombre": "Javier",
+            "apellido": "Lopez",
+            "especializacion": "Oncología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311240",
+            "nombre": "Luis",
+            "apellido": "Torres",
+            "especializacion": "Pediatría",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311241",
+            "nombre": "Marina",
+            "apellido": "Martinez",
+            "especializacion": "Psiquiatría",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311242",
+            "nombre": "Natalia",
+            "apellido": "Vargas",
+            "especializacion": "Reumatología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311243",
+            "nombre": "Oscar",
+            "apellido": "Rios",
+            "especializacion": "Urología",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311244",
+            "nombre": "Patricia",
+            "apellido": "Santos",
+            "especializacion": "Radiología",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311245",
+            "nombre": "Raul",
+            "apellido": "Ortega",
+            "especializacion": "Traumatología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311246",
+            "nombre": "Sara",
+            "apellido": "Gutierrez",
+            "especializacion": "Otorrinolaringología",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311247",
+            "nombre": "Tomas",
+            "apellido": "Molina",
+            "especializacion": "Infectología",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311248",
+            "nombre": "Ursula",
+            "apellido": "Perez",
+            "especializacion": "Endocrinología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311249",
+            "nombre": "Victor",
+            "apellido": "Ramos",
+            "especializacion": "Neurología",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311250",
+            "nombre": "Walter",
+            "apellido": "Gomez",
+            "especializacion": "Cardiología",
+            "areas": ["2A", "2B", "2C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311251",
+            "nombre": "Ximena",
+            "apellido": "Castro",
+            "especializacion": "Ginecología",
+            "areas": ["1A", "1B", "1C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311252",
+            "nombre": "Yolanda",
+            "apellido": "Fernandez",
+            "especializacion": "Dermatología",
+            "areas": ["3A", "3B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "100311253",
+            "nombre": "Zara",
+            "apellido": "Gutierrez",
+            "especializacion": "Oncología",
+            "areas": ["2A", "2B", "2C"]
+        }
+    ]
+)
+
+// Cardiologos 
+
+db.especialistas.insertMany(
+    [
+        {
+            "_id": ObjectId(),
+            "cedula": "1003911231",
+            "nombre": "Marcos",
+            "apellido": "Augusto Salazar",
+            "especializacion": "cardiología",
+            "areas": ["1A", "2B", "3C"]
+        },
+        {
+            "_id": ObjectId(),
+            "cedula": "1004083152",
+            "nombre": "Viviana",
+            "apellido": "Cuenca Cahcon",
+            "especializacion": "cardiología",
+            "areas": ["1A", "2B", "3C"]
+        }
+    ]
+)
+
+db.citas_medicas.insertMany(
+    [
+        {
+            "_id": ObjectId(),
+            "num_cita": 0001,
+            "motivo": "dolor de cabeza",
+            "fecha_hora": "2023-10-08T17:00:00",
+            "nombre_medico": "Juan Sebastian",
+            "area": "1A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0002,
+            "motivo": "dolor de cabeza",
+            "fecha_hora": "2023-10-10T14:00:00",
+            "nombre_medico": "Maria",
+            "area": "3B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0003,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-10-12T10:30:00",
+            "nombre_medico": "Luis Daniel",
+            "area": "3A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0004,
+            "motivo": "examen de sangre",
+            "fecha_hora": "2023-10-15T09:15:00",
+            "nombre_medico": "Carlos",
+            "area": "1B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0005,
+            "motivo": "dolor de espalda",
+            "fecha_hora": "2023-10-18T11:45:00",
+            "nombre_medico": "Ana",
+            "area": "3C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0006,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-10-20T14:30:00",
+            "nombre_medico": "Laura",
+            "area": "1C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0007,
+            "motivo": "dolor de garganta",
+            "fecha_hora": "2023-10-22T16:20:00",
+            "nombre_medico": "Alejandro",
+            "area": "1A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0008,
+            "motivo": "dolor abdominal",
+            "fecha_hora": "2023-10-25T09:45:00",
+            "nombre_medico": "Roberto",
+            "area": "1C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0009,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-10-27T13:10:00",
+            "nombre_medico": "Adriana",
+            "area": "2B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0010,
+            "motivo": "dolor de cabeza",
+            "fecha_hora": "2023-10-30T15:30:00",
+            "nombre_medico": "Miguel",
+            "area": "2C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0011,
+            "motivo": "examen de sangre",
+            "fecha_hora": "2023-11-02T10:00:00",
+            "nombre_medico": "Isabel",
+            "area": "1B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0012,
+            "motivo": "dolor de espalda",
+            "fecha_hora": "2023-11-05T11:20:00",
+            "nombre_medico": "Natalia",
+            "area": "3C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0013,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-11-08T14:40:00",
+            "nombre_medico": "Pablo",
+            "area": "2A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0014,
+            "motivo": "dolor de garganta",
+            "fecha_hora": "2023-11-11T16:50:00",
+            "nombre_medico": "Hector",
+            "area": "3B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0015,
+            "motivo": "dolor abdominal",
+            "fecha_hora": "2023-11-14T09:15:00",
+            "nombre_medico": "Fernando",
+            "area": "1A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0016,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-11-17T13:30:00",
+            "nombre_medico": "Hector",
+            "area": "1B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0017,
+            "motivo": "dolor de cabeza",
+            "fecha_hora": "2023-11-20T15:40:00",
+            "nombre_medico": "Juan Sebastian",
+            "area": "2C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0018,
+            "motivo": "examen de sangre",
+            "fecha_hora": "2023-11-23T10:10:00",
+            "nombre_medico": "Luis Daniel",
+            "area": "3A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0019,
+            "motivo": "dolor de espalda",
+            "fecha_hora": "2023-11-26T11:50:00",
+            "nombre_medico": "Carlos",
+            "area": "2B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0020,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-11-29T14:00:00",
+            "nombre_medico": "Ana",
+            "area": "3C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0021,
+            "motivo": "dolor de garganta",
+            "fecha_hora": "2023-12-02T16:30:00",
+            "nombre_medico": "Laura",
+            "area": "1A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0022,
+            "motivo": "dolor abdominal",
+            "fecha_hora": "2023-12-05T09:45:00",
+            "nombre_medico": "Alejandro",
+            "area": "2C"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0023,
+            "motivo": "consulta rutinaria",
+            "fecha_hora": "2023-12-08T13:15:00",
+            "nombre_medico": "Roberto",
+            "area": "3A"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0024,
+            "motivo": "dolor de cabeza",
+            "fecha_hora": "2023-12-11T15:45:00",
+            "nombre_medico": "Adriana",
+            "area": "1B"
+        },
+        {
+            "_id": ObjectId(),
+            "num_cita": 0025,
+            "motivo": "examen de sangre",
+            "fecha_hora": "2023-12-14T10:30:00",
+            "nombre_medico": "Miguel",
+            "area": "2A"
+        }
+    ]
+)
+
+
+db.pacientes_medicamentos.insertMany(
+    [
+        {
+            _id: ObjectId(),
+            cedula_paciente: "1031381712",
+            nombre_paciente: "Camilo",
+            apellido_paciente: "Saenz",
+            medicamento: "Simvastatina",
+            informacion_medicamento: "La simvastatina​ o sinvastatina​ es un fármaco de la familia de las estatinas utilizado para disminuir los niveles de colesterol en sangre."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "2032485621",
+            nombre_paciente: "Laura",
+            apellido_paciente: "Gómez",
+            medicamento: "Paracetamol",
+            informacion_medicamento: "El paracetamol es un medicamento utilizado para reducir la fiebre y aliviar el dolor leve a moderado."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "3057612345",
+            nombre_paciente: "Carlos",
+            apellido_paciente: "Mendoza",
+            medicamento: "Omeprazol",
+            informacion_medicamento: "El omeprazol es un medicamento inhibidor de la bomba de protones que reduce la producción de ácido en el estómago."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "4089321765",
+            nombre_paciente: "Ana",
+            apellido_paciente: "Hernández",
+            medicamento: "Amoxicilina",
+            informacion_medicamento: "La amoxicilina es un antibiótico de la familia de las penicilinas utilizado para tratar infecciones bacterianas."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "5104320987",
+            nombre_paciente: "Luis",
+            apellido_paciente: "González",
+            medicamento: "Ibuprofeno",
+            informacion_medicamento: "El ibuprofeno es un medicamento antiinflamatorio no esteroideo utilizado para aliviar el dolor y reducir la inflamación."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "6123490765",
+            nombre_paciente: "María",
+            apellido_paciente: "Rodríguez",
+            medicamento: "Lorazepam",
+            informacion_medicamento: "El lorazepam es un medicamento ansiolítico y sedante utilizado para tratar trastornos de ansiedad y síntomas del alcoholismo agudo."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "7145098234",
+            nombre_paciente: "Javier",
+            apellido_paciente: "López",
+            medicamento: "Diclofenaco",
+            informacion_medicamento: "El diclofenaco es un medicamento antiinflamatorio no esteroideo utilizado para aliviar el dolor y reducir la inflamación."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "8163940281",
+            nombre_paciente: "Elena",
+            apellido_paciente: "Martínez",
+            medicamento: "Metformina",
+            informacion_medicamento: "La metformina es un medicamento utilizado para tratar la diabetes tipo 2, ayudando a controlar los niveles de azúcar en sangre."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "9182037465",
+            nombre_paciente: "Gabriel",
+            apellido_paciente: "Sánchez",
+            medicamento: "Ciprofloxacino",
+            informacion_medicamento: "El ciprofloxacino es un antibiótico de amplio espectro utilizado para tratar diversas infecciones bacterianas."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "1029384756",
+            nombre_paciente: "Sofía",
+            apellido_paciente: "Fernández",
+            medicamento: "Amitriptilina",
+            informacion_medicamento: "La amitriptilina es un antidepresivo tricíclico utilizado para tratar la depresión, el trastorno obsesivo-compulsivo y otros trastornos mentales."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "1122334455",
+            nombre_paciente: "Mateo",
+            apellido_paciente: "Gómez",
+            medicamento: "Atorvastatina",
+            informacion_medicamento: "La atorvastatina es un fármaco de la familia de las estatinas utilizado para disminuir los niveles de colesterol en sangre y prevenir enfermedades cardíacas."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "2233445566",
+            nombre_paciente: "Valentina",
+            apellido_paciente: "Hernández",
+            medicamento: "Ranitidina",
+            informacion_medicamento: "La ranitidina es un antagonista del receptor H2 utilizado para reducir la producción de ácido en el estómago y tratar úlceras y reflujo gástrico."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "3344556677",
+            nombre_paciente: "Martín",
+            apellido_paciente: "López",
+            medicamento: "Clonazepam",
+            informacion_medicamento: "El clonazepam es un medicamento anticonvulsivo y ansiolítico utilizado para tratar trastornos de ansiedad, convulsiones y trastornos del sueño."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "4455667788",
+            nombre_paciente: "Victoria",
+            apellido_paciente: "Martínez",
+            medicamento: "Furosemida",
+            informacion_medicamento: "La furosemida es un diurético de asa utilizado para tratar la retención de líquidos y la hipertensión arterial."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "5566778899",
+            nombre_paciente: "Lucas",
+            apellido_paciente: "García",
+            medicamento: "Sertralina",
+            informacion_medicamento: "La sertralina es un inhibidor selectivo de la recaptación de serotonina utilizado para tratar la depresión, el trastorno obsesivo-compulsivo y otros trastornos mentales."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "6677889900",
+            nombre_paciente: "Emma",
+            apellido_paciente: "Pérez",
+            medicamento: "Enalapril",
+            informacion_medicamento: "El enalapril es un inhibidor de la enzima convertidora de angiotensina utilizado para tratar la hipertensión arterial y la insuficiencia cardíaca."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "7788990011",
+            nombre_paciente: "Daniel",
+            apellido_paciente: "Díaz",
+            medicamento: "Metronidazol",
+            informacion_medicamento: "El metronidazol es un antibiótico y antiprotozoario utilizado para tratar infecciones bacterianas y parasitarias."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "8899001122",
+            nombre_paciente: "Mía",
+            apellido_paciente: "Rodríguez",
+            medicamento: "Escitalopram",
+            informacion_medicamento: "El escitalopram es un inhibidor selectivo de la recaptación de serotonina utilizado para tratar la depresión y el trastorno de ansiedad generalizada."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "9900112233",
+            nombre_paciente: "Alejandro",
+            apellido_paciente: "Fernández",
+            medicamento: "Diazepam",
+            informacion_medicamento: "El diazepam es un medicamento ansiolítico, sedante y relajante muscular utilizado para tratar trastornos de ansiedad, insomnio y espasmos musculares."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "1122334455",
+            nombre_paciente: "Olivia",
+            apellido_paciente: "Gómez",
+            medicamento: "Fluoxetina",
+            informacion_medicamento: "La fluoxetina es un inhibidor selectivo de la recaptación de serotonina utilizado para tratar la depresión, el trastorno obsesivo-compulsivo y otros trastornos mentales."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "2233445566",
+            nombre_paciente: "David",
+            apellido_paciente: "Hernández",
+            medicamento: "Losartán",
+            informacion_medicamento: "El losartán es un antagonista del receptor de angiotensina II utilizado para tratar la hipertensión arterial y la insuficiencia cardíaca."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "3344556677",
+            nombre_paciente: "Sara",
+            apellido_paciente: "Martínez",
+            medicamento: "Levotiroxina",
+            informacion_medicamento: "La levotiroxina es una hormona tiroidea utilizada para tratar el hipotiroidismo, una condición en la cual la glándula tiroides no produce suficiente hormona tiroidea."
+        },
+        {
+            _id: ObjectId(),
+            cedula_paciente: "4455667788",
+            nombre_paciente: "Lucía",
+            apellido_paciente: "Gómez",
+            medicamento: "Clopidogrel",
+            informacion_medicamento: "El clopidogrel es un antiagregante plaquetario utilizado para prevenir la formación de coágulos sanguíneos y reducir el riesgo de accidente cerebrovascular y enfermedad cardíaca."
+        }
+    ]
+)
+
+
+db.autorizaciones_examenes.insertMany([
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "1031381712",
+        "nombre_paciente": "Camilo",
+        "apellido_paciente": "Saenz",
+        "medicamento": "Simvastatina",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-06T15:15:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "2032485621",
+        "nombre_paciente": "Laura",
+        "apellido_paciente": "Gómez",
+        "medicamento": "Paracetamol",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-07T16:30:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "3057612345",
+        "nombre_paciente": "Carlos",
+        "apellido_paciente": "Mendoza",
+        "medicamento": "Omeprazol",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-08T14:45:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "4089321765",
+        "nombre_paciente": "Ana",
+        "apellido_paciente": "Hernández",
+        "medicamento": "Amoxicilina",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-09T12:20:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "5104320987",
+        "nombre_paciente": "Luis",
+        "apellido_paciente": "González",
+        "medicamento": "Ibuprofeno",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-10T11:10:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "6123490765",
+        "nombre_paciente": "María",
+        "apellido_paciente": "Rodríguez",
+        "medicamento": "Lorazepam",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-11T10:05:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "7145098234",
+        "nombre_paciente": "Javier",
+        "apellido_paciente": "López",
+        "medicamento": "Diclofenaco",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-12T09:30:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "8163940281",
+        "nombre_paciente": "Elena",
+        "apellido_paciente": "Martínez",
+        "medicamento": "Metformina",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-13T14:15:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "9182037465",
+        "nombre_paciente": "Gabriel",
+        "apellido_paciente": "Sánchez",
+        "medicamento": "Ciprofloxacino",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-14T13:20:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "1029384756",
+        "nombre_paciente": "Sofía",
+        "apellido_paciente": "Fernández",
+        "medicamento": "Amitriptilina",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-15T12:45:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "1122334455",
+        "nombre_paciente": "Mateo",
+        "apellido_paciente": "Gómez",
+        "medicamento": "Atorvastatina",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-16T11:55:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "2233445566",
+        "nombre_paciente": "Valentina",
+        "apellido_paciente": "Hernández",
+        "medicamento": "Ranitidina",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-17T10:30:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "3344556677",
+        "nombre_paciente": "Martín",
+        "apellido_paciente": "López",
+        "medicamento": "Clonazepam",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-18T09:40:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "4455667788",
+        "nombre_paciente": "Victoria",
+        "apellido_paciente": "Martínez",
+        "medicamento": "Furosemida",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-19T14:20:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "5566778899",
+        "nombre_paciente": "Lucas",
+        "apellido_paciente": "García",
+        "medicamento": "Sertralina",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-20T13:10:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "6677889900",
+        "nombre_paciente": "Emma",
+        "apellido_paciente": "Pérez",
+        "medicamento": "Enalapril",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-21T12:05:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "7788990011",
+        "nombre_paciente": "Daniel",
+        "apellido_paciente": "Díaz",
+        "medicamento": "Metronidazol",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-22T11:30:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "8899001122",
+        "nombre_paciente": "Mía",
+        "apellido_paciente": "Rodríguez",
+        "medicamento": "Escitalopram",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-23T10:15:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "9900112233",
+        "nombre_paciente": "Alejandro",
+        "apellido_paciente": "Fernández",
+        "medicamento": "Diazepam",
+        "autorizacion": "si",
+        "fecha_entrega": "2023-10-24T09:45:00"
+    },
+    {
+        "_id": ObjectId(),
+        "cedula_paciente": "1122334455",
+        "nombre_paciente": "Olivia",
+        "apellido_paciente": "Gómez",
+        "medicamento": "Fluoxetina",
+        "autorizacion": "no",
+        "fecha_entrega": "2023-10-25T14:55:00"
+    }
+])
